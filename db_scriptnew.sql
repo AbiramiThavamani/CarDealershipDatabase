@@ -89,10 +89,10 @@ VALUES
 -- Insert sample data into sales_contracts
 INSERT INTO sales_contracts (vin_id, salesTaxAmount, date, recordingFee, processingFee, financeOption)
 VALUES
-(100, 49.75, '05-31-2024', 100.00, 295.00, 0.00),
-(101, 50.75, '06-11-2023', 300.00, 875.00, 1.00),
-(102, 60.34, '06-22-2024', 500.00, 875.00, 1.00),
-(103, 30.15, '03-11-2024', 700.00, 345.00, 1.00);
+(100, 49.75, '2024-06-12', 100.00, 295.00, true),
+(101, 50.75, '2024-07-01', 300.00, 875.00, false),
+(102, 60.34, '2024-08-15', 500.00, 875.00, true),
+(103, 30.15, '2024-09-20', 700.00, 345.00, true);
 
 -- Insert sample data into lease_contracts
 INSERT INTO lease_contracts(vin_id, expectedEndingValue, leaseFee)
