@@ -43,7 +43,7 @@ vin_id INT
 
 -- Create the sales_contracts table
 CREATE TABLE sales_contracts(
-sales_contractsID INT AUTO_INCREMENT PRIMARY KEY,
+vin_id INT AUTO_INCREMENT PRIMARY KEY,
 salesTaxAmount DECIMAL,
 date VARCHAR(50),
 recordingFee DECIMAL,
@@ -54,7 +54,7 @@ FOREIGN KEY (vin_id) REFERENCES vehicles (vin_id)
 
 -- Create the lease_contracts table
 CREATE TABLE lease_contracts(
-lease_contractsID INT AUTO_INCREMENT PRIMARY KEY,
+vin_id INT AUTO_INCREMENT PRIMARY KEY,
 expectedEndingValue DECIMAL,
 leaseFee DECIMAL,
 FOREIGN KEY (vin_id) REFERENCES vehicles (vin_id)
@@ -87,17 +87,17 @@ VALUES
 
 
 -- Insert sample data into sales_contracts
-INSERT INTO sales_contracts (sales_contractsID, salesTaxAmount, date, recordingFee, processingFee, financeOption)
+INSERT INTO sales_contracts (vin_id, salesTaxAmount, date, recordingFee, processingFee, financeOption)
 VALUES
-(1, 49.75, '05-31-2024', 100.00, 295.00, 0.00),
-(2, 50.75, '06-11-2023', 300.00, 875.00, 1.00),
-(3, 60.34, '06-22-2024', 500.00, 875.00, 1.00),
-(4, 30.15, '03-11-2024', 700.00, 345.00, 1.00);
+(100, 49.75, '05-31-2024', 100.00, 295.00, 0.00),
+(101, 50.75, '06-11-2023', 300.00, 875.00, 1.00),
+(102, 60.34, '06-22-2024', 500.00, 875.00, 1.00),
+(103, 30.15, '03-11-2024', 700.00, 345.00, 1.00);
 
 -- Insert sample data into lease_contracts
-INSERT INTO lease_contracts(lease_contractsID, expectedEndingValue, leaseFee)
+INSERT INTO lease_contracts(vin_id, expectedEndingValue, leaseFee)
 VALUES
-(1, 15997.50, 2239.65),
-(2, 16993.80, 3439.87),
-(3, 14577.23, 2345.20),
-(4, 23567.80, 1678.70);
+(100, 15997.50, 2239.65),
+(101, 16993.80, 3439.87),
+(102, 14577.23, 2345.20),
+(103, 23567.80, 1678.70);
